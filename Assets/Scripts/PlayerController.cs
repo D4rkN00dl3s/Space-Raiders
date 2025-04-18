@@ -1,4 +1,6 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,5 +23,19 @@ public class PlayerController : MonoBehaviour
     {
         float input = Input.GetAxis("Vertical");
         transform.position += new Vector3(0, input * verticalSpeed * Time.deltaTime, 0);
+    }
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.transform.parent.TryGetComponent<IEnemyCollidable>(out var entity))
+        {
+            DestroySelf();
+        }
+    }
+
+    void DestroySelf()
+    {
+        Debug.Log("We DEAD");
     }
 }
