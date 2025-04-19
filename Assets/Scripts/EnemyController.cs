@@ -1,11 +1,7 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour, IEnemyCollidable, IEntityDamageable
+public class EnemyController : EntityBase, IEnemyCollidable, IEntityDamageable
 {
-    [Range(1, 20)]
-    [SerializeField] private uint moveSpeed;
-    [SerializeField] private uint maxHealth;
-    private int currentHealth;
 
     // Start is called before the first frame update
     void Start()

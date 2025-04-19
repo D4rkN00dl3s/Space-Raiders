@@ -9,20 +9,15 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float minOffsetY;
     [SerializeField] private float maxOffsetY;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(SpawnWithDelay(spawnIntervals));
-    }
-
-    IEnumerator SpawnWithDelay(float seconds)
+    public IEnumerator SpawnWithDelay(EntityDataSO data)
     {
         while (true)
         {
-            yield return new WaitForSeconds(seconds);
+            yield return new WaitForSeconds(spawnIntervals);
 
             var position = Random.Range(minOffsetY, maxOffsetY);
             var newEnemy = Instantiate(enemyPrefab, new Vector3(transform.position.x, position, 0), Quaternion.identity);
+            newEnemy.Initialize(data);
         }
     }
 }
