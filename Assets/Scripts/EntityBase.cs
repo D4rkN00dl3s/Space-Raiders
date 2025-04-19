@@ -31,9 +31,9 @@ public abstract class EntityBase : MonoBehaviour, IEntityDamageable
         if(currentHealth <= 0) Destroy(this.gameObject);
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(uint damage)
     {
-        currentHealth -= damage;
+        currentHealth -= (int)damage;
         CheckIfDead();
     }
 

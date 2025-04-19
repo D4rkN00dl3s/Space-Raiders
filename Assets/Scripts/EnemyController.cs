@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyController : EntityBase, IEnemyCollidable, IEntityDamageable
 {
-    private int damage;
+    private uint damage;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +26,10 @@ public class EnemyController : EntityBase, IEnemyCollidable, IEntityDamageable
     {
         base.Initialize(data);
         damage = data.damage;
+    }
+
+    public uint ReturnDamageFromCollision()
+    {
+        return damage;
     }
 }

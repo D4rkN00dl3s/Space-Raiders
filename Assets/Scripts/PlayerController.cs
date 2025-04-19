@@ -25,7 +25,7 @@ public class PlayerController : EntityBase, IEntityDamageable
     {
         if (other.transform.parent.TryGetComponent<IEnemyCollidable>(out var entity))
         {
-            TakeDamage(2);
+            TakeDamage(entity.ReturnDamageFromCollision());
         }
     }
 

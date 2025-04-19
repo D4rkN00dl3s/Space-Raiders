@@ -156,7 +156,7 @@ MonoBehaviour:
   playerConfig: {fileID: 11400000, guid: 8e9d88a73e5f6f1e1a28456673608579, type: 2}
   enemySpawnerPrefab: {fileID: 910329789685437462, guid: 8fff088ec8aaf22fda308519ad0a847a, type: 3}
   enemySpawnerPosition: {fileID: 1641389964}
-  enemyConfig: {fileID: 11400000, guid: 8ce87aaae40441d70863d79f9cf5d0a9, type: 2}
+  enemyConfig: {fileID: 11400000, guid: 418fa74e18a497c2299128e757d7cf80, type: 2}
 --- !u!4 &412073993
 Transform:
   m_ObjectHideFlags: 0

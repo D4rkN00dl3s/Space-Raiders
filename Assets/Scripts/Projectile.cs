@@ -4,7 +4,7 @@ public class Projectile : MonoBehaviour
 {
     [Range(1, 10)]
     [SerializeField] private float moveSpeed;
-    [SerializeField] private int damage;
+    [SerializeField] private uint damage;
     private Transform parent;
 
     // Start is called before the first frame update
