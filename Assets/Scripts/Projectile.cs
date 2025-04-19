@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour, IDisableable
 {
     [Range(1, 10)]
     [SerializeField] private float moveSpeed;
@@ -39,7 +39,12 @@ public class Projectile : MonoBehaviour
         if (other.transform.parent.TryGetComponent<IEntityDamageable>(out var entity))
         {
             entity.TakeDamage(damage);
-            Destroy(this.gameObject);
+            DisableObject();
         }
+    }
+
+    public void DisableObject()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class EntityBase : MonoBehaviour, IEntityDamageable
+public abstract class EntityBase : MonoBehaviour, IEntityDamageable, IDisableable
 {
     protected string entityName;
     protected uint maxHealth;
@@ -28,7 +28,7 @@ public abstract class EntityBase : MonoBehaviour, IEntityDamageable
 
     protected virtual void CheckIfDead()
     {
-        if(currentHealth <= 0) Destroy(this.gameObject);
+        if(currentHealth <= 0) DisableObject();
     }
 
     public virtual void TakeDamage(uint damage)
@@ -37,4 +37,8 @@ public abstract class EntityBase : MonoBehaviour, IEntityDamageable
         CheckIfDead();
     }
 
+    public void DisableObject()
+    {
+        gameObject.SetActive(false);
+    }
 }

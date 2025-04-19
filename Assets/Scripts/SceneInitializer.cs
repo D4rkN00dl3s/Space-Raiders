@@ -34,6 +34,7 @@ public class SceneInitializer : MonoBehaviour
     {
         player = Instantiate(playerPrefab, playerSpawnPosition.position, Quaternion.identity);
         player.Initialize(playerConfig);
+        player.GetComponentInChildren<ShootingContoller>().Initialize();
     }
 
     private void StartSpawningEnemies()

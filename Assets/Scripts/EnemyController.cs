@@ -1,7 +1,6 @@
-using System.Data;
 using UnityEngine;
 
-public class EnemyController : EntityBase, IEnemyCollidable, IEntityDamageable, IDisableable
+public class EnemyController : EntityBase, IEnemyCollidable, IEntityDamageable
 {
     private uint damage;
 
@@ -31,10 +30,5 @@ public class EnemyController : EntityBase, IEnemyCollidable, IEntityDamageable, 
     public uint ReturnDamageFromCollision()
     {
         return damage;
-    }
-
-    public void DisableObject()
-    {
-        gameObject.SetActive(false);
     }
 }

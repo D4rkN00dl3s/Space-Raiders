@@ -248,7 +248,7 @@ GameObject:
   m_Layer: 0
   m_Name: LeftBorder
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -639,7 +639,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemySpawnerPostion
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -668,10 +668,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1835727335}
   - component: {fileID: 1835727336}
+  - component: {fileID: 1835727337}
   m_Layer: 0
   m_Name: RightBorder
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -684,7 +685,7 @@ Transform:
   m_GameObject: {fileID: 1835727334}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.84, y: 0, z: 0}
+  m_LocalPosition: {x: 14.81, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -719,7 +720,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -735,6 +736,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.18, y: 11}
   m_EdgeRadius: 0
+--- !u!114 &1835727337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835727334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada3750d43912e3c4bc3e0d179c44931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2030388049
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +760,7 @@ GameObject:
   m_Layer: 0
   m_Name: PlayerSpawnPosition
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
