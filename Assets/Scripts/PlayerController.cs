@@ -29,11 +29,6 @@ public class PlayerController : EntityBase, IEntityDamageable
         }
     }
 
-    void DestroySelf()
-    {
-        Debug.Log("We DEAD");
-    }
-
     void ShootHandler()
     {
         if (Input.GetKey(KeyCode.Space) && readyToShoot)
@@ -49,10 +44,5 @@ public class PlayerController : EntityBase, IEntityDamageable
         readyToShoot = false;
         yield return new WaitForSeconds(seconds);
         readyToShoot = true;
-    }
-
-    public void TakeDamage(int damage)
-    {
-        DestroySelf();
     }
 }

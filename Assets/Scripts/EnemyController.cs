@@ -1,7 +1,9 @@
+using System.Data;
 using UnityEngine;
 
 public class EnemyController : EntityBase, IEnemyCollidable, IEntityDamageable
 {
+    private int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +22,9 @@ public class EnemyController : EntityBase, IEnemyCollidable, IEntityDamageable
         transform.position -= new Vector3(moveSpeed * Time.deltaTime, 0, 0);
     }
 
-    public void TakeDamage(int damage)
+    internal override void Initialize(EntityDamagerDataSO data)
     {
-        currentHealth -= damage;
-        Debug.Log($"Enemy: taken {damage} and have {currentHealth} HP left.");
+        base.Initialize(data);
+        damage = data.damage;
     }
 }

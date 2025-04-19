@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -40,6 +39,7 @@ public class Projectile : MonoBehaviour
         if (other.transform.parent.TryGetComponent<IEntityDamageable>(out var entity))
         {
             entity.TakeDamage(damage);
+            Destroy(this.gameObject);
         }
     }
 }

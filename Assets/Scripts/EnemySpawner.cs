@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float minOffsetY;
     [SerializeField] private float maxOffsetY;
 
-    public IEnumerator SpawnWithDelay(EntityDataSO data)
+    public IEnumerator SpawnWithDelay(EntityDamagerDataSO data)
     {
         while (true)
         {

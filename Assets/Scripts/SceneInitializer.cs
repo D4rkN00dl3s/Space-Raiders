@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class SceneInitializer : MonoBehaviour
@@ -12,7 +11,7 @@ public class SceneInitializer : MonoBehaviour
     [Header("Enemy Spawner Settings")]
     [SerializeField] private EnemySpawner enemySpawnerPrefab;
     [SerializeField] private Transform enemySpawnerPosition;
-    [SerializeField] private EntityDataSO enemyConfig;
+    [SerializeField] private EntityDamagerDataSO enemyConfig;
 
     private EnemySpawner enemySpawner;
     private PlayerController player;
