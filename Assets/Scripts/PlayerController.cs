@@ -1,11 +1,20 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+
 public class PlayerController : EntityBase, IEntityDamageable
 {
     [SerializeField] private Projectile projectilePrefab;
     private bool readyToShoot = true;
     [SerializeField] private float shootIntervals;
+
+    private Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -17,7 +26,7 @@ public class PlayerController : EntityBase, IEntityDamageable
     void MovementHandler()
     {
         float input = Input.GetAxis("Vertical");
-        transform.position += new Vector3(0, input * moveSpeed * Time.deltaTime, 0);
+        rb.MovePosition(new Vector2(transform.position.x, transform.position.y + input * moveSpeed * Time.deltaTime));
     }
 
 
