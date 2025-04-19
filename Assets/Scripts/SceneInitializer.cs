@@ -27,6 +27,7 @@ public class SceneInitializer : MonoBehaviour
     private void InitializeEnemySpawner()
     {
         enemySpawner = Instantiate(enemySpawnerPrefab, enemySpawnerPosition.position, Quaternion.identity);
+        enemySpawner.Initialize();
     }
 
     private void InitializePlayer()

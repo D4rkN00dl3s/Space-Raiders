@@ -1,4 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -8,6 +11,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private EnemyController enemyPrefab;
     [SerializeField] private float minOffsetY;
     [SerializeField] private float maxOffsetY;
+    [SerializeField] private uint enemiesInPool;
+    private List<EnemyController> enemyPool = new();
 
     public IEnumerator SpawnWithDelay(EntityDamagerDataSO data)
     {
@@ -15,9 +20,30 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnIntervals);
 
-            var position = Random.Range(minOffsetY, maxOffsetY);
-            var newEnemy = Instantiate(enemyPrefab, new Vector3(transform.position.x, position, 0), Quaternion.identity);
-            newEnemy.Initialize(data);
+            var positionY = Random.Range(minOffsetY, maxOffsetY);
+            var enemy = enemyPool.FirstOrDefault(go => !go.gameObject.activeSelf);
+            enemy.Initialize(data);
+            enemy.transform.position = new Vector3(transform.position.x, positionY, 0);
+            ActivateObject(enemy);
         }
+    }
+
+    public void Initialize()
+    {
+        for (uint i = 0; i <= enemiesInPool; i++)
+        {
+            var newEnemy = Instantiate(enemyPrefab, transform);
+            DisableObject(newEnemy);
+            enemyPool.Add(newEnemy);
+        }
+    }
+
+    public void DisableObject(EnemyController entity)
+    {
+        entity.gameObject.SetActive(false);
+    }
+    public void ActivateObject(EnemyController entity)
+    {
+        entity.gameObject.SetActive(true);
     }
 }

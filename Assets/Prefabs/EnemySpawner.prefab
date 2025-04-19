@@ -48,3 +48,4 @@ MonoBehaviour:
   enemyPrefab: {fileID: 6981660958228767528, guid: 2f29cf272947542e3baf206ffef58b1b, type: 3}
   minOffsetY: -3.5
   maxOffsetY: 3.5
+  enemiesInPool: 20
