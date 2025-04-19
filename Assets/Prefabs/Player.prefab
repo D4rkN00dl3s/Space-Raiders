@@ -209,6 +209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   verticalSpeed: 10
+  projectilePrefab: {fileID: 7151078402443443270, guid: 25a070427b0bfa1089a503ca20f5deb7, type: 3}
+  shootIntervals: 0.5
 --- !u!50 &6625446403308025546
 Rigidbody2D:
   serializedVersion: 4
